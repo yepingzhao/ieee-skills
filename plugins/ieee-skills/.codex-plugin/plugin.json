@@ -1,0 +1,13 @@
+{
+  "name": "ieee-skills",
+  "version": "1.0.0",
+  "interface": {
+    "displayName": "IEEE Skills",
+    "shortDescription": "IEEE academic workflow skills",
+    "longDescription": "A collection of skills for producing work at IEEE journal and conference standards — figures, writing, citations, peer review, presentations, and literature search.",
+    "category": "Academic",
+    "capabilities": ["writing", "figures", "citations", "review", "search"],
+    "defaultPrompt": "Use IEEE skills for academic writing and research workflows.",
+    "brandColor": "#006699"
+  }
+}

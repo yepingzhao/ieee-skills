@@ -1,0 +1,79 @@
+name: ieee-polishing
+version: 1.0.0
+description: >
+  Declarative manifest for the static/dynamic split. SKILL.md uses this to
+  decide which fragments to load for a given polish request. Axes are paper_type,
+  section, language, and journal. Deep reference material stays in on-demand references.
+
+always_load:
+  - ../_shared/core/reader-workflow.md
+  - ../_shared/core/paper-type-taxonomy.md
+  - ../_shared/core/conference-taxonomy.md
+  - ../_shared/core/ethics.md
+  - ../_shared/core/terminology-ledger.md
+  - static/core/stance.md
+  - static/core/failure-modes.md
+  - static/core/output-format.md
+
+axes:
+  paper_type:
+    detect: |
+      Classify the paper type from the user's input, draft structure, or target venue.
+      Options: transaction, conference, letter, review, magazine.
+    values:
+      transaction: static/fragments/paper_type/transaction.md
+      conference: static/fragments/paper_type/conference.md
+      letter:     static/fragments/paper_type/letter.md
+      review:     static/fragments/paper_type/review.md
+      magazine:   static/fragments/paper_type/magazine.md
+    default: transaction
+    multi: false
+
+  section:
+    detect: |
+      Identify which section(s) of an IEEE paper the draft belongs to.
+      May be multiple (e.g., abstract + introduction).
+    values:
+      abstract:    static/fragments/section/abstract.md
+      intro:       static/fragments/section/introduction.md
+      method:      static/fragments/section/method.md
+      results:     static/fragments/section/results.md
+      discussion:  static/fragments/section/discussion.md
+      conclusion:  static/fragments/section/conclusion.md
+      title:       static/fragments/section/title.md
+    multi: true
+
+  language:
+    detect: |
+      Detect whether the input is already in English (en) or needs
+      Chinese-to-English translation (zh-to-en).
+    values:
+      en:       static/fragments/language/en.md
+      zh-to-en: static/fragments/language/zh-to-en.md
+    default: en
+    multi: false
+
+  journal:
+    detect: |
+      Detect the target venue type. IEEE Transactions, IEEE Conference, or generic.
+    values:
+      ieee-tran: static/fragments/journal/ieee-tran.md
+      ieee-conf: static/fragments/journal/ieee-conf.md
+      generic:   static/fragments/journal/generic.md
+    default: generic
+    multi: false
+
+references:
+  on_demand:
+    - condition: user asks for phrasebank-style alternatives or technical vocabulary suggestions
+      path: references/phrasebank-playbook.md
+    - condition: need section-level rhetorical move patterns
+      path: references/section-moves.md
+    - condition: strict IEEE style audit or checklist review
+      path: references/style-guardrails.md
+    - condition: LaTeX layout/placement/float fix (NOT prose polishing)
+      path: references/latex-layout.md
+    - condition: user wants to understand IEEE writing strategy or approach
+      path: references/writing-strategy.md
+    - condition: user wants examples from real IEEE published papers
+      path: references/published-article-patterns.md

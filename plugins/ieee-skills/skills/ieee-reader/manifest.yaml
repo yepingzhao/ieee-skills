@@ -1,0 +1,24 @@
+name: ieee-reader
+version: 1.0.0
+description: Declarative manifest for IEEE paper reader.
+
+always_load:
+  - ../_shared/core/terminology-ledger.md
+  - static/core/stance.md
+
+axes:
+  source_format:
+    detect: Detect from user input. PDF, HTML, or text/LaTeX?
+    values:
+      pdf:  static/fragments/source_format/pdf.md
+      html: static/fragments/source_format/html.md
+      text: static/fragments/source_format/text.md
+    default: pdf
+    multi: false
+
+references:
+  on_demand:
+    - condition: need PDF extraction strategy for IEEE double-column format
+      path: references/extraction-strategy.md
+    - condition: need annotation and figure grounding guidance
+      path: references/annotation-guide.md

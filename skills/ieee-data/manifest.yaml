@@ -1,0 +1,22 @@
+name: ieee-data
+version: 1.0.0
+description: Declarative manifest for IEEE data availability and reproducibility.
+
+always_load:
+  - static/core/stance.md
+  - static/core/contract.md
+
+references:
+  on_demand:
+    - condition: IEEE data policy principles
+      path: references/policy-principles.md
+    - condition: repository selection and persistent identifiers
+      path: references/repository-and-identifiers.md
+    - condition: FAIR metadata compliance
+      path: references/fair-metadata-checklist.md
+    - condition: data availability statement patterns
+      path: references/statement-patterns.md
+    - condition: IEEE reproducibility context
+      path: references/source-basis.md
+    - condition: Chinese author alignment
+      path: references/chinese-author-alignment.md

@@ -1,0 +1,41 @@
+name: ieee-figure
+version: 1.0.0
+description: >
+  Declarative manifest for IEEE figure workflow. Backend axis is a blocking gate.
+
+always_load:
+  - static/core/contract.md
+  - static/core/stance.md
+
+axes:
+  backend:
+    detect: |
+      BLOCKING GATE. Determine backend from explicit user choice. If NOT explicitly
+      chosen, ask "Python, R, or LaTeX?" and stop. Do not default, guess, or generate
+      mock data before the answer. Once selected, backend is exclusive.
+    values:
+      python: static/fragments/backend/python.md
+      r:      static/fragments/backend/r.md
+      latex:  static/fragments/backend/latex.md
+    multi: false
+
+references:
+  on_demand:
+    - condition: convert user request into core conclusion, evidence hierarchy, panel map
+      path: references/figure-contract.md
+    - condition: Python matplotlib palette, helper signatures, validation rules
+      path: references/api.md
+    - condition: R ggplot2 workflow specifics
+      path: references/r-workflow.md
+    - condition: LaTeX tikz/pgfplots workflow
+      path: references/latex-workflow.md
+    - condition: typography, color theory, layout rationale, IEEE double-column aware export
+      path: references/design-theory.md
+    - condition: IEEE layout patterns, legend-only axes, print-safe bars
+      path: references/common-patterns.md
+    - condition: radar, scatter, fill_between, log-scale patterns
+      path: references/chart-types.md
+    - condition: end-to-end walkthroughs
+      path: references/tutorials.md
+    - condition: real IEEE page archetypes and observations
+      path: references/ieee-observations.md

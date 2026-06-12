@@ -1,0 +1,79 @@
+name: ieee-writing
+version: 1.0.0
+description: >
+  Declarative manifest for ieee-writing. SKILL.md uses this to decide which
+  fragments to load. Axes: paper_type, section, language, journal.
+
+always_load:
+  - ../_shared/core/reader-workflow.md
+  - ../_shared/core/paper-type-taxonomy.md
+  - ../_shared/core/conference-taxonomy.md
+  - ../_shared/core/ethics.md
+  - ../_shared/core/terminology-ledger.md
+  - static/core/stance.md
+  - static/core/contract.md
+
+axes:
+  paper_type:
+    detect: |
+      Classify from user input, target venue, or draft structure.
+    values:
+      transaction: static/fragments/paper_type/transaction.md
+      conference:  static/fragments/paper_type/conference.md
+      letter:      static/fragments/paper_type/letter.md
+      review:      static/fragments/paper_type/review.md
+    default: transaction
+    multi: false
+
+  section:
+    detect: |
+      Identify which section(s) to draft. May be multiple.
+    values:
+      abstract:           static/fragments/section/abstract.md
+      intro:              static/fragments/section/introduction.md
+      method:             static/fragments/section/method.md
+      results-discussion: static/fragments/section/results-discussion.md
+      conclusion:         static/fragments/section/conclusion.md
+      title:              static/fragments/section/title.md
+      related-work:       static/fragments/section/related-work.md
+    multi: true
+
+  language:
+    detect: Detect whether input is English or Chinese.
+    values:
+      en:       static/fragments/language/en.md
+      zh-to-en: static/fragments/language/zh-to-en.md
+    default: en
+    multi: false
+
+  journal:
+    detect: Target venue type.
+    values:
+      ieee-tran: static/fragments/journal/ieee-tran.md
+      ieee-conf: static/fragments/journal/ieee-conf.md
+      generic:   static/fragments/journal/generic.md
+    default: generic
+    multi: false
+
+references:
+  on_demand:
+    - condition: drafting an introduction section
+      path: references/introduction.md
+    - condition: drafting a methods section
+      path: references/method.md
+    - condition: drafting experiments or results
+      path: references/experiments.md
+    - condition: drafting an abstract
+      path: references/abstract.md
+    - condition: drafting a conclusion
+      path: references/conclusion.md
+    - condition: drafting related work
+      path: references/related-work.md
+    - condition: need paragraph-level flow guidance
+      path: references/paragraph-flow.md
+    - condition: need full article architecture design
+      path: references/article-architecture.md
+    - condition: running pre-submission self-review
+      path: references/paper-review.md
+    - condition: Chinese author converting notes to English
+      path: references/chinese-author-workflow.md

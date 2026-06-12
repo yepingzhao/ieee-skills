@@ -1,0 +1,13 @@
+{
+  "name": "ieee-skills",
+  "description": "A collection of Claude-compatible academic workflow bundles for producing work at IEEE journal and conference standards. Covers scientific figures (ieee-figure), technical prose polishing (ieee-polishing), manuscript drafting (ieee-writing), peer-review assessment (ieee-reviewer), IEEE [1]-style citation retrieval and export (ieee-citation), data availability and reproducibility (ieee-data), paper-to-presentation conversion (ieee-paper2ppt), literature search via MCP (ieee-academic-search), paper reading and annotation (ieee-reader), and peer-review response drafting (ieee-response).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Community contribution",
+    "email": ""
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/user/ieee-skills",
+  "repository": "https://github.com/user/ieee-skills",
+  "keywords": ["ieee", "academic", "engineering", "figure", "writing", "citation", "publication", "conference", "latex"]
+}

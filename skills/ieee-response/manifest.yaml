@@ -1,0 +1,27 @@
+name: ieee-response
+version: 1.0.0
+description: Declarative manifest for IEEE reviewer response drafting. No axes — variation handled by runtime parameters.
+
+always_load:
+  - static/core/stance.md
+
+references:
+  on_demand:
+    - condition: parsing and classifying reviewer comments
+      path: references/intake-and-routing.md
+    - condition: classifying comment types
+      path: references/comment-taxonomy.md
+    - condition: mapping comments to concrete actions
+      path: references/action-mapping.md
+    - condition: structuring the response letter
+      path: references/response-structure.md
+    - condition: tone and stance guidance
+      path: references/tone-and-stance.md
+    - condition: handling difficult reviewer situations
+      path: references/difficult-cases.md
+    - condition: pre-submission quality checklist
+      path: references/qa-checklist.md
+    - condition: Chinese author response workflow
+      path: references/chinese-author-alignment.md
+    - condition: IEEE review process context
+      path: references/source-basis.md

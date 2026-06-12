@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ieee-academic-search": {
+      "command": "python",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/skills/ieee-academic-search/mcp-server/academic_search_server.py"],
+      "env": {}
+    }
+  }
+}

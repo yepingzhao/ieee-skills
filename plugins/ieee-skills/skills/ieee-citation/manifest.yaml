@@ -1,0 +1,21 @@
+name: ieee-citation
+version: 1.0.0
+description: >
+  Declarative manifest for IEEE citation retrieval. No content axes — workflow
+  is linear (segment → search → grade → export). On-demand references for
+  journal scope, BibTeX format, search strategy, and script usage.
+
+always_load:
+  - static/core/stance.md
+  - static/core/contract.md
+
+references:
+  on_demand:
+    - condition: need IEEE journal scope boundaries for filtering
+      path: references/journal-scope.md
+    - condition: generating or validating IEEE BibTeX entries
+      path: references/bibtex-ieee.md
+    - condition: designing a search strategy for IEEE Xplore or other sources
+      path: references/search-strategy.md
+    - condition: running the citation Python script
+      path: references/script-usage.md

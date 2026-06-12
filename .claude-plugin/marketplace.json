@@ -1,0 +1,16 @@
+{
+  "name": "ieee-skills",
+  "version": "1.0.0",
+  "description": "IEEE academic workflow skills for Claude Code.",
+  "owner": {
+    "name": "Community"
+  },
+  "plugins": [
+    {
+      "name": "ieee-skills",
+      "version": "1.0.0",
+      "source": "./",
+      "category": "academic"
+    }
+  ]
+}

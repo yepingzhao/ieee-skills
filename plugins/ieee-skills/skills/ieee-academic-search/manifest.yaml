@@ -1,0 +1,29 @@
+name: ieee-academic-search
+version: 1.0.0
+description: Declarative manifest for IEEE academic search.
+
+always_load:
+  - static/core/stance.md
+
+axes:
+  workflow:
+    detect: Detect from user input — topic search, identifier lookup, or author search.
+    values:
+      topic:    static/fragments/workflow/topic.md
+      doi:      static/fragments/workflow/doi.md
+      author:   static/fragments/workflow/author.md
+    default: topic
+    multi: false
+
+references:
+  on_demand:
+    - condition: understanding source priority and routing
+      path: references/source-tiers.md
+    - condition: designing search queries
+      path: references/search-strategy.md
+    - condition: deduplicating multi-source results
+      path: references/dedup-engine.md
+    - condition: parsing and formatting citations
+      path: references/citation-parser.md
+    - condition: RIS/BibTeX format details
+      path: references/ris-bibtex-format.md

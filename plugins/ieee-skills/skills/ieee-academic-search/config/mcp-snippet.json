@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ieee-academic-search": {
+      "command": "python",
+      "args": ["mcp-server/academic_search_server.py"],
+      "env": {}
+    }
+  }
+}

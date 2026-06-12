@@ -1,0 +1,24 @@
+name: ieee-paper2ppt
+version: 1.0.0
+description: Declarative manifest for IEEE paper-to-presentation conversion.
+
+always_load:
+  - ../_shared/core/terminology-ledger.md
+  - static/core/contract.md
+
+axes:
+  backend:
+    detect: Beamer or PPTX? Ask if unclear. Default beamer for conferences, pptx for group meetings.
+    values:
+      beamer: static/fragments/backend/beamer.md
+      pptx:   static/fragments/backend/pptx.md
+    multi: false
+
+references:
+  on_demand:
+    - condition: presentation design and layout principles
+      path: references/design-and-layout.md
+    - condition: extracting and placing figures from the paper
+      path: references/figure-assets.md
+    - condition: pre-delivery QA checklist
+      path: references/self-review.md
